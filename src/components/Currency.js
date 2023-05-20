@@ -16,28 +16,47 @@ const Currency = () => {
   };
 
   return (
-    <div className={"alert"}>
-      <select
-        className="custopm-select"
-        id="inputGroupSelect02"
-        onChange={(event) => change_currency(event.target)}
+    <div className="alert alert-secondary">
+      <label
+        style={{
+          marginLeft: "1rem",
+          backgroundColor: "#33FF49",
+          // color: "white",
+        }}
       >
-        <option defaultValue="$" name="Default">
-          Currency ({currency} {currencyLabel})
-        </option>
-        <option value="$" name="Dollar">
-          $ Dollar
-        </option>
-        <option value="£" name="Pound">
-          £ Pound
-        </option>
-        <option value="€" name="Euro">
-          € Euro
-        </option>
-        <option value="₹" name="Rupee">
-          ₹ Rupee
-        </option>
-      </select>
+        Currency
+        <select
+          name="hover_color"
+          id="currency"
+          onChange={(event) => change_currency(event.target)}
+          style={{
+            marginLeft: "1rem",
+            backgroundColor: "#33FF49",
+            // color: "white",
+          }}
+        >
+          <option
+            style={{ color: "black" }}
+            defaultValue="$"
+            value="$"
+            name="Dollar"
+          >
+            $ Dollar
+          </option>
+          {/* <option value="$" name="Dollar">
+            $ Dollar
+          </option> */}
+          <option style={{ color: "black" }} value="£" name="Pound">
+            £ Pound
+          </option>
+          <option style={{ color: "black" }} value="€" name="Euro">
+            € Euro
+          </option>
+          <option style={{ color: "black" }} value="₹" name="Rupee">
+            ₹ Rupee
+          </option>
+        </select>
+      </label>
     </div>
   );
 };

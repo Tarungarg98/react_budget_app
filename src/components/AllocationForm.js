@@ -9,7 +9,7 @@ const AllocationForm = (props) => {
   const [action, setAction] = useState("");
 
   const submitEvent = () => {
-    if (cost > remaining) {
+    if ((cost > remaining) & (action === "Add")) {
       alert("The value cannot exceed remaining funds $" + remaining);
       setCost("");
       return;
@@ -81,15 +81,17 @@ const AllocationForm = (props) => {
               Reduce
             </option>
           </select>
-          {currency}
-          <input
-            required="required"
-            type="number"
-            id="cost"
-            value={cost}
-            style={{ marginLeft: "0rem", size: 10 }}
-            onChange={(event) => setCost(event.target.value)}
-          ></input>
+          <div style={{ marginLeft: "1rem" }}>
+            {currency}
+            <input
+              required="required"
+              type="number"
+              id="cost"
+              value={cost}
+              style={{ marginLeft: "0rem", size: 10 }}
+              onChange={(event) => setCost(event.target.value)}
+            ></input>
+          </div>
           <button
             className="btn btn-primary"
             onClick={submitEvent}
